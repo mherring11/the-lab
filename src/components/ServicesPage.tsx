@@ -7,7 +7,7 @@ export default function ServicesPage() {
       <div className="relative bg-white text-center py-16">
         <div className="flex justify-center mb-4">
           <img
-            src="/logo.png"
+            src="/src/assets/logo.png"
             alt="The Lab Logo"
             className="h-24"
           />
