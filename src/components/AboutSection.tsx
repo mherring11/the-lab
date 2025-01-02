@@ -13,7 +13,7 @@ export default function AboutSection() {
           <h2 className="text-4xl font-bold text-gray-800 mb-6">
             Meet{" "}
             <span className="bg-black text-yellow-400 px-2 py-1 rounded">
-              Mike
+              Coach Mike
             </span>
           </h2>
           <p className="text-lg text-gray-600 mb-6">
