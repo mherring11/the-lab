@@ -5,22 +5,24 @@ export default function ServicesPage() {
     <div id="services" className="bg-gray-100">
       {/* Services Hero */}
       <div className="relative bg-white text-center py-16">
+        {/* Logo */}
         <div className="flex justify-center mb-4">
           <img
-            src="/logo.png"
+            src="/src/assets/logo.png" // Your logo path
             alt="The Lab Logo"
-            className="h-24"
+            className="h-24" // Adjust the height as needed
           />
         </div>
+        {/* SERVICES Heading */}
         <h1 className="text-5xl font-bold bg-black text-yellow-400 inline-block px-6 py-2 rounded">
           SERVICES
         </h1>
       </div>
 
-      {/* Personal Training Section */}
+      {/* Pricing Section */}
       <section
         id="personal-training"
-        className="py-16 bg-white text-center scroll-mt-32"
+        className="py-16 bg-white text-center scroll-mt-24"
       >
         <h2 className="text-3xl font-bold mb-6">PERSONAL TRAINING PRICING</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -45,10 +47,11 @@ export default function ServicesPage() {
       {/* Bootcamp Section */}
       <section
         id="bootcamp"
-        className="py-16 bg-white text-center scroll-mt-32"
+        className="py-16 bg-white text-center scroll-mt-24"
       >
         <h2 className="text-3xl font-bold mb-6">BOOTCAMP CLASSES</h2>
         <div className="space-y-8 max-w-5xl mx-auto">
+          {/* Unlimited Bootcamp Class */}
           <div className="bg-gray-100 p-8 rounded-lg shadow-lg flex justify-between items-center">
             <div>
               <h3 className="text-xl font-bold">Unlimited Bootcamp Class</h3>
@@ -70,6 +73,7 @@ export default function ServicesPage() {
             </div>
           </div>
 
+          {/* Single Bootcamp Class */}
           <div className="bg-gray-100 p-8 rounded-lg shadow-lg flex justify-between items-center">
             <div>
               <h3 className="text-xl font-bold">Single Bootcamp Class</h3>
