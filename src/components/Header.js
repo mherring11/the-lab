@@ -17,7 +17,7 @@ export default function Header() {
         }
         setIsMobileMenuOpen(false); // Close menu after clicking a link
     };
-    return (_jsxs("header", { className: "fixed w-full bg-white shadow z-50 font-Montserrat", children: [_jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: _jsxs("div", { className: "flex items-center justify-between h-24", children: [_jsx("div", { className: "flex-shrink-0", children: _jsx(Logo, {}) }), _jsxs("nav", { className: "hidden md:flex space-x-8", children: [_jsx(Link, { to: "/", onClick: (e) => {
+    return (_jsxs("header", { className: "fixed w-full bg-white shadow z-50 font-Montserrat", children: [_jsx("div", { className: "relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: _jsxs("div", { className: "flex items-center justify-center h-24", children: [_jsx("div", { className: "absolute left-4 flex-shrink-0", children: _jsx(Logo, {}) }), _jsxs("nav", { className: "hidden md:flex space-x-8", children: [_jsx(Link, { to: "/", onClick: (e) => {
                                         e.preventDefault();
                                         scrollToSection("home");
                                     }, className: "text-lg font-semibold text-black hover:text-primary transition", children: "Home" }), _jsx(Link, { to: "/#about", onClick: (e) => {
@@ -29,7 +29,7 @@ export default function Header() {
                                     }, className: "text-lg font-semibold text-black hover:text-primary transition", children: "Services" }), _jsx(Link, { to: "/#blog", onClick: (e) => {
                                         e.preventDefault();
                                         scrollToSection("blog");
-                                    }, className: "text-lg font-semibold text-black hover:text-primary transition", children: "Blog" })] }), _jsx("button", { onClick: () => scrollToSection("appointment"), className: "hidden md:block bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark text-sm", children: "Begin Your Journey" }), _jsx("button", { className: "md:hidden text-black", onClick: () => setIsMobileMenuOpen(!isMobileMenuOpen), children: isMobileMenuOpen ? _jsx(X, { size: 24 }) : _jsx(Menu, { size: 24 }) })] }) }), isMobileMenuOpen && (_jsx("div", { className: "md:hidden bg-white shadow-lg", children: _jsxs("nav", { className: "space-y-4 p-4", children: [_jsx(Link, { to: "/", onClick: (e) => {
+                                    }, className: "text-lg font-semibold text-black hover:text-primary transition", children: "Blog" })] }), _jsx("div", { className: "absolute right-4", children: _jsx("button", { onClick: () => scrollToSection("appointment"), className: "hidden md:block bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark text-sm", children: "Begin Your Journey" }) }), _jsx("button", { className: "md:hidden text-black absolute right-4", onClick: () => setIsMobileMenuOpen(!isMobileMenuOpen), children: isMobileMenuOpen ? _jsx(X, { size: 24 }) : _jsx(Menu, { size: 24 }) })] }) }), isMobileMenuOpen && (_jsx("div", { className: "md:hidden bg-white shadow-lg", children: _jsxs("nav", { className: "space-y-4 p-4", children: [_jsx(Link, { to: "/", onClick: (e) => {
                                 e.preventDefault();
                                 scrollToSection("home");
                             }, className: "block text-lg font-semibold text-black hover:text-primary transition", children: "Home" }), _jsx(Link, { to: "/#about", onClick: (e) => {

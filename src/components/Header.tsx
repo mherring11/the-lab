@@ -20,14 +20,14 @@ export default function Header() {
 
   return (
     <header className="fixed w-full bg-white shadow z-50 font-Montserrat">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-24">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-center h-24">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="absolute left-4 flex-shrink-0">
             <Logo />
           </div>
 
-          {/* Desktop Navigation */}
+          {/* Centered Navigation */}
           <nav className="hidden md:flex space-x-8">
             <Link
               to="/"
@@ -72,16 +72,18 @@ export default function Header() {
           </nav>
 
           {/* Begin Your Journey Button */}
-          <button
-            onClick={() => scrollToSection("appointment")}
-            className="hidden md:block bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark text-sm"
-          >
-            Begin Your Journey
-          </button>
+          <div className="absolute right-4">
+            <button
+              onClick={() => scrollToSection("appointment")}
+              className="hidden md:block bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark text-sm"
+            >
+              Begin Your Journey
+            </button>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-black"
+            className="md:hidden text-black absolute right-4"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

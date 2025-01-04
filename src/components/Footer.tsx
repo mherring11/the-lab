@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from './Logo';
 import { Phone, Mail, Facebook, Instagram } from 'lucide-react';
-import threadsLogo from '../assets/Threads Logo.png'; // Import the Threads logo
+import threadsLogo from '../assets/Threads Logo.png';
 
 const services = [
   { text: 'Personal Training', id: 'personal-training' },
@@ -22,10 +22,9 @@ const footerLinks = [
 const socialLinks = [
   { icon: Facebook, href: 'https://www.facebook.com/profile.php?id=61571518048845' },
   { icon: Instagram, href: 'https://www.instagram.com/thelab210/' },
-  { icon: threadsLogo, href: 'https://www.threads.net/@thelab210', isCustom: true }, // Custom Threads logo
+  { icon: threadsLogo, href: 'https://www.threads.net/@thelab210', isCustom: true },
 ];
 
-// Scroll function to navigate to the service section
 const scrollToSection = (id: string) => {
   const section = document.getElementById(id);
   if (section) {
@@ -37,9 +36,10 @@ export default function Footer() {
   return (
     <footer className="bg-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          {/* Clickable Logo and Description */}
-          <div>
+        {/* Main Footer Grid */}
+        <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left mb-12">
+          {/* Logo and Description */}
+          <div className="flex flex-col items-center md:items-start">
             <a href="#top" aria-label="Go to homepage">
               <Logo />
             </a>
@@ -47,7 +47,7 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div>
+          <div className="flex flex-col items-center md:items-start mt-8 md:mt-0">
             <h3 className="text-lg font-bold text-gray-900 mb-4">SERVICES</h3>
             <ul className="space-y-3">
               {services.map(({ text, id }) => (
@@ -64,11 +64,11 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="flex flex-col items-center md:items-start mt-8 md:mt-0">
             <h3 className="text-lg font-bold text-gray-900 mb-4">CONTACT US</h3>
             <ul className="space-y-3">
               {contactInfo.map(({ icon: Icon, text, href }) => (
-                <li key={text} className="flex items-center space-x-2">
+                <li key={text} className="flex items-center justify-center md:justify-start space-x-2">
                   <Icon className="h-5 w-5 text-primary" />
                   <a href={href} className="text-gray-600 hover:text-primary">
                     {text}
@@ -104,11 +104,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom Links */}
-        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm">
+        <div className="border-t border-gray-200 pt-8 flex flex-col items-center space-y-4 md:space-y-0 md:flex-row md:justify-between">
+          <p className="text-gray-500 text-sm text-center">
             © {new Date().getFullYear()} The Lab | All rights reserved
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
+          <div className="flex space-x-6">
             {footerLinks.map(({ text, href }) => (
               <a key={text} href={href} className="text-sm text-gray-500 hover:text-primary">
                 {text}
