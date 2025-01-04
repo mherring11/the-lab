@@ -14,8 +14,8 @@ const contactInfo = [
 ];
 
 const footerLinks = [
-  { text: 'Terms of Service', href: '#' },
-  { text: 'Privacy Policy', href: '#' },
+  { text: 'Terms of Service', href: 'https://www.freeprivacypolicy.com/live/59252fa8-f324-47b8-815b-64be2fac048f' },
+  { text: 'Privacy Policy', href: 'https://www.freeprivacypolicy.com/live/1955fcf3-cd90-442b-bf3f-d52263cb7a10' },
   { text: 'Blog', href: '#blog' },
 ];
 
@@ -110,7 +110,7 @@ export default function Footer() {
           </p>
           <div className="flex space-x-6">
             {footerLinks.map(({ text, href }) => (
-              <a key={text} href={href} className="text-sm text-gray-500 hover:text-primary">
+              <a key={text} href={href} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-primary">
                 {text}
               </a>
             ))}
