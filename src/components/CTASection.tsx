@@ -1,20 +1,21 @@
-import React from 'react';
-import { Check } from 'lucide-react';
+import React from "react";
+import { Check } from "lucide-react";
+import fitnessImage from "../assets/shutterstock_1379743754-1.jpg"; // Import the image correctly
 
 const features = [
-  'Personalized Fitness Assessments',
-  'Custom Training Programs',
-  'Community-Building Bootcamp Sessions',
-  'Nutrition Guidance for Sustainable Results',
-  'Progress Tracking and Milestone Celebrations',
-  'Virtual Training Options for Added Flexibility',
+  "Personalized Fitness Assessments",
+  "Custom Training Programs",
+  "Community-Building Bootcamp Sessions",
+  "Nutrition Guidance for Sustainable Results",
+  "Progress Tracking and Milestone Celebrations",
+  "Virtual Training Options for Added Flexibility",
 ];
 
 export default function CTASection() {
   const scrollToAppointmentForm = () => {
-    const appointmentSection = document.getElementById('appointment');
+    const appointmentSection = document.getElementById("appointment");
     if (appointmentSection) {
-      appointmentSection.scrollIntoView({ behavior: 'smooth' });
+      appointmentSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -22,10 +23,13 @@ export default function CTASection() {
     <section className="bg-black py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Text Section */}
           <div className="text-white">
             <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-              ACHIEVE RESULTS WITH<br />
-              WORKOUTS THAT WORK<br />
+              ACHIEVE RESULTS WITH
+              <br />
+              WORKOUTS THAT WORK
+              <br />
               <span className="text-primary">FOR YOU</span>
             </h2>
 
@@ -59,9 +63,10 @@ export default function CTASection() {
             </button>
           </div>
 
+          {/* Right Image Section */}
           <div className="relative h-full">
             <img
-              src="/src/assets/shutterstock_1379743754-1.jpg" // Update with the correct path
+              src={fitnessImage} // Use the imported image
               alt="Fitness trainers"
               className="rounded-lg object-cover w-full h-[500px]"
             />
