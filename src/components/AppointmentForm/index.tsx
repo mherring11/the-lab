@@ -54,8 +54,12 @@ export default function AppointmentForm() {
         <form onSubmit={handleSubmit} className="bg-gray-200 p-8 rounded-lg">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <FormInput label="Your Full Name" type="text" name="fullName" required />
-            <FormInput label="Best Email to Reach You" type="email" name="email" required />
+            <FormInput label="Your Email Address" type="email" name="email" required />
+            <FormInput label="Best Phone Number to Reach You" type="tel" name="phone" required />
             <FormInput label="Preferred Start Date" type="date" name="date" required />
+          </div>
+
+          <div className="text-center mt-6">
             <FormSelect
               label="How Can We Help?"
               name="service"
@@ -63,6 +67,7 @@ export default function AppointmentForm() {
               required
             />
           </div>
+
           <FormTextarea
             label="Tell Us About Your Fitness Goals"
             name="message"
@@ -85,7 +90,7 @@ export default function AppointmentForm() {
 
         {status === "success" && (
           <p className="text-green-600 text-center mt-4">
-            Your appointment request has been sent successfully!
+            Thank you for reaching out! We’ll follow up shortly.
           </p>
         )}
         {status === "error" && (
