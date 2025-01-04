@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../assets/logo.png"; // Import the logo correctly
 
 export default function ServicesPage() {
   return (
@@ -8,7 +9,7 @@ export default function ServicesPage() {
         {/* Logo */}
         <div className="flex justify-center mb-4">
           <img
-            src="/src/assets/logo.png" // Your logo path
+            src={logo} // Use the imported logo
             alt="The Lab Logo"
             className="h-24" // Adjust the height as needed
           />
@@ -37,7 +38,9 @@ export default function ServicesPage() {
             <p className="text-gray-600">Per Person/Per Session</p>
           </div>
           <div className="bg-gray-100 shadow-lg rounded-lg p-6">
-            <h3 className="text-xl font-semibold mb-2">Group Training: 3-4 People</h3>
+            <h3 className="text-xl font-semibold mb-2">
+              Group Training: 3-4 People
+            </h3>
             <p className="text-2xl font-bold text-yellow-500">$25</p>
             <p className="text-gray-600">Per Person/Per Session</p>
           </div>
@@ -61,10 +64,18 @@ export default function ServicesPage() {
             </div>
             <div>
               <div className="flex gap-2 mb-4">
-                <span className="bg-black text-yellow-400 font-bold rounded-full px-3 py-1">M</span>
-                <span className="bg-black text-yellow-400 font-bold rounded-full px-3 py-1">W</span>
-                <span className="bg-black text-yellow-400 font-bold rounded-full px-3 py-1">TH</span>
-                <span className="bg-black text-yellow-400 font-bold rounded-full px-3 py-1">S</span>
+                <span className="bg-black text-yellow-400 font-bold rounded-full px-3 py-1">
+                  M
+                </span>
+                <span className="bg-black text-yellow-400 font-bold rounded-full px-3 py-1">
+                  W
+                </span>
+                <span className="bg-black text-yellow-400 font-bold rounded-full px-3 py-1">
+                  TH
+                </span>
+                <span className="bg-black text-yellow-400 font-bold rounded-full px-3 py-1">
+                  S
+                </span>
               </div>
               <p className="text-lg font-semibold">$250 per month</p>
               <button className="bg-yellow-400 text-black rounded-lg px-4 py-2 mt-4 font-bold">
