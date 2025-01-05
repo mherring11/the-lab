@@ -8,7 +8,7 @@ const services = [
 ];
 
 const exploreLinks = [
-  { text: 'Blog', href: 'https://blog.thelab210.com/' },
+  { text: 'Blog', href: 'https://blog.thelab210.com' },
   { text: 'Terms of Service', href: 'https://www.freeprivacypolicy.com/live/59252fa8-f324-47b8-815b-64be2fac048f' },
   { text: 'Privacy Policy', href: 'https://www.freeprivacypolicy.com/live/1955fcf3-cd90-442b-bf3f-d52263cb7a10' },
 ];
@@ -25,11 +25,11 @@ export default function Footer() {
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left mb-12">
           {/* Logo and Description */}
-          <div>
-            <a href="#top" aria-label="Go to homepage">
+          <div className="flex flex-col items-center md:items-start">
+            <a href="#top" aria-label="Go to homepage" className="mb-4">
               <Logo />
             </a>
-            <p className="mt-4 text-gray-600">Built in The Lab, Validated by Effort</p>
+            <p className="text-gray-600">Built in The Lab, Validated by Effort</p>
           </div>
 
           {/* Services */}
@@ -68,7 +68,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Us */}
+          {/* Contact Info */}
           <div>
             <h3 className="text-lg font-bold text-gray-900 mb-4">CONTACT US</h3>
             <ul className="space-y-3">
@@ -85,8 +85,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom Links */}
-        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm text-center md:text-left">
+        <div className="border-t border-gray-200 pt-8 flex flex-col items-center md:flex-row justify-between">
+          <p className="text-gray-500 text-sm text-center md:text-left mb-4 md:mb-0">
             © {new Date().getFullYear()} The Lab | All rights reserved
           </p>
           <p className="text-gray-500 text-sm text-center md:text-right">
