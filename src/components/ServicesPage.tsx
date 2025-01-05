@@ -2,22 +2,13 @@ import React from "react";
 import logo from "../assets/logo.png"; // Import the logo correctly
 
 export default function ServicesPage() {
-  const handlePreRegister = () => {
-    // Handle pre-registration logic here, such as redirecting to a registration page
-    window.location.href = "/register";
-  };
-
   return (
     <div id="services" className="bg-gray-100">
       {/* Services Hero */}
       <div className="relative bg-white text-center py-16">
         {/* Logo */}
         <div className="flex justify-center mb-4">
-          <img
-            src={logo}
-            alt="The Lab Logo"
-            className="h-24"
-          />
+          <img src={logo} alt="The Lab Logo" className="h-24" />
         </div>
         {/* SERVICES Heading */}
         <h1 className="text-5xl font-bold bg-black text-yellow-400 inline-block px-6 py-2 rounded">
@@ -75,6 +66,7 @@ export default function ServicesPage() {
               schedule: ["M", "W", "TH", "S"],
               price: "$250 per month",
               buttonLabel: "Enroll Now",
+              url: "https://pay.thelab210.com/bootcamp-membership", // Link for Unlimited Bootcamp Class
             },
             {
               title: "Single Bootcamp Class",
@@ -118,12 +110,14 @@ export default function ServicesPage() {
                   </div>
                 )}
                 <p className="text-lg font-semibold">{bootcamp.price}</p>
-                <button
-                  onClick={handlePreRegister}
-                  className="bg-yellow-400 text-black rounded-lg px-4 py-2 mt-4 font-bold hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+                <a
+                  href={bootcamp.url || "#"}
+                  target={bootcamp.url ? "_blank" : "_self"}
+                  rel="noopener noreferrer"
+                  className="bg-yellow-400 text-black rounded-lg px-4 py-2 mt-4 font-bold hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 inline-block"
                 >
                   {bootcamp.buttonLabel}
-                </button>
+                </a>
               </div>
             </div>
           ))}
