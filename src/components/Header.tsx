@@ -71,25 +71,27 @@ export default function Header() {
 
           {/* Right Section with Social Icons and Button */}
           <div className="absolute right-4 flex items-center space-x-4">
-            {/* Social Icons with Hover Effect */}
-            <a
-              href="https://www.facebook.com/profile.php?id=61571518048845"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-              className="transform transition-transform hover:scale-125 focus:outline-none hover:text-yellow-500"
-            >
-              <Facebook className="h-6 w-6 text-black transition" />
-            </a>
-            <a
-              href="https://www.instagram.com/thelab210/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="transform transition-transform hover:scale-125 focus:outline-none hover:text-yellow-500"
-            >
-              <Instagram className="h-6 w-6 text-black transition" />
-            </a>
+            {/* Social Icons with Hover Effect (Hidden on Mobile) */}
+            <div className="hidden md:flex space-x-4">
+              <a
+                href="https://www.facebook.com/profile.php?id=61571518048845"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="transform transition-transform hover:scale-125 focus:outline-none hover:text-yellow-500"
+              >
+                <Facebook className="h-6 w-6 text-black transition" />
+              </a>
+              <a
+                href="https://www.instagram.com/thelab210/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="transform transition-transform hover:scale-125 focus:outline-none hover:text-yellow-500"
+              >
+                <Instagram className="h-6 w-6 text-black transition" />
+              </a>
+            </div>
 
             {/* Begin Your Journey Button */}
             <button
