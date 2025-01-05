@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Facebook, Instagram } from "lucide-react"; // Import the icons
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
 
@@ -59,20 +59,39 @@ export default function Header() {
             >
               Services
             </Link>
-            <Link
-              to="/#blog"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("blog");
-              }}
+            <a
+              href="https://blog.thelab210.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-lg font-semibold text-black hover:text-primary transition"
             >
               Blog
-            </Link>
+            </a>
           </nav>
 
-          {/* Begin Your Journey Button */}
-          <div className="absolute right-4">
+          {/* Right Section with Social Icons and Button */}
+          <div className="absolute right-4 flex items-center space-x-4">
+            {/* Social Icons with Hover Effect */}
+            <a
+              href="https://www.facebook.com/profile.php?id=61571518048845"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="transform transition-transform hover:scale-125 focus:outline-none hover:text-yellow-500"
+            >
+              <Facebook className="h-6 w-6 text-black transition" />
+            </a>
+            <a
+              href="https://www.instagram.com/thelab210/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="transform transition-transform hover:scale-125 focus:outline-none hover:text-yellow-500"
+            >
+              <Instagram className="h-6 w-6 text-black transition" />
+            </a>
+
+            {/* Begin Your Journey Button */}
             <button
               onClick={() => scrollToSection("appointment")}
               className="hidden md:block bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark text-sm"
@@ -125,16 +144,14 @@ export default function Header() {
             >
               Services
             </Link>
-            <Link
-              to="/#blog"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("blog");
-              }}
+            <a
+              href="https://blog.thelab210.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="block text-lg font-semibold text-black hover:text-primary transition"
             >
               Blog
-            </Link>
+            </a>
             <button
               onClick={() => scrollToSection("appointment")}
               className="block w-full bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark text-center text-sm"

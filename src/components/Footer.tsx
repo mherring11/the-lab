@@ -1,11 +1,16 @@
 import React from 'react';
 import Logo from './Logo';
-import { Phone, Mail, Facebook, Instagram } from 'lucide-react';
-import threadsLogo from '../assets/Threads Logo.png';
+import { Phone, Mail } from 'lucide-react';
 
 const services = [
   { text: 'Personal Training', id: 'personal-training' },
   { text: 'Bootcamp', id: 'bootcamp' },
+];
+
+const exploreLinks = [
+  { text: 'Blog', href: 'https://blog.thelab210.com/' },
+  { text: 'Terms of Service', href: 'https://www.freeprivacypolicy.com/live/59252fa8-f324-47b8-815b-64be2fac048f' },
+  { text: 'Privacy Policy', href: 'https://www.freeprivacypolicy.com/live/1955fcf3-cd90-442b-bf3f-d52263cb7a10' },
 ];
 
 const contactInfo = [
@@ -13,33 +18,14 @@ const contactInfo = [
   { icon: Mail, text: 'contact@thelab210.com', href: 'mailto:contact@thelab210.com' },
 ];
 
-const footerLinks = [
-  { text: 'Terms of Service', href: 'https://www.freeprivacypolicy.com/live/59252fa8-f324-47b8-815b-64be2fac048f' },
-  { text: 'Privacy Policy', href: 'https://www.freeprivacypolicy.com/live/1955fcf3-cd90-442b-bf3f-d52263cb7a10' },
-  { text: 'Blog', href: '#blog' },
-];
-
-const socialLinks = [
-  { icon: Facebook, href: 'https://www.facebook.com/profile.php?id=61571518048845' },
-  { icon: Instagram, href: 'https://www.instagram.com/thelab210/' },
-  { icon: threadsLogo, href: 'https://www.threads.net/@thelab210', isCustom: true },
-];
-
-const scrollToSection = (id: string) => {
-  const section = document.getElementById(id);
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-};
-
 export default function Footer() {
   return (
     <footer className="bg-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Grid */}
-        <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left mb-12">
           {/* Logo and Description */}
-          <div className="flex flex-col items-center md:items-start">
+          <div>
             <a href="#top" aria-label="Go to homepage">
               <Logo />
             </a>
@@ -47,13 +33,13 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div className="flex flex-col items-center md:items-start mt-8 md:mt-0">
+          <div>
             <h3 className="text-lg font-bold text-gray-900 mb-4">SERVICES</h3>
             <ul className="space-y-3">
               {services.map(({ text, id }) => (
                 <li key={id}>
                   <button
-                    onClick={() => scrollToSection(id)}
+                    onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })}
                     className="text-gray-600 hover:text-primary focus:outline-none"
                   >
                     {text}
@@ -63,8 +49,27 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div className="flex flex-col items-center md:items-start mt-8 md:mt-0">
+          {/* Explore */}
+          <div>
+            <h3 className="text-lg font-bold text-gray-900 mb-4">EXPLORE</h3>
+            <ul className="space-y-3">
+              {exploreLinks.map(({ text, href }) => (
+                <li key={text}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-primary"
+                  >
+                    {text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Us */}
+          <div>
             <h3 className="text-lg font-bold text-gray-900 mb-4">CONTACT US</h3>
             <ul className="space-y-3">
               {contactInfo.map(({ icon: Icon, text, href }) => (
@@ -79,42 +84,14 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Social Links */}
-        <div className="flex justify-center space-x-6 mb-8">
-          {socialLinks.map(({ icon, href, isCustom }) => (
-            <a
-              key={href}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transform transition-transform hover:scale-125 focus:outline-none"
-              aria-label="Social Media Link"
-            >
-              {isCustom ? (
-                <img
-                  src={icon}
-                  alt="Threads Logo"
-                  className="h-6 w-6"
-                />
-              ) : (
-                React.createElement(icon, { className: 'h-6 w-6 text-black' })
-              )}
-            </a>
-          ))}
-        </div>
-
         {/* Bottom Links */}
-        <div className="border-t border-gray-200 pt-8 flex flex-col items-center space-y-4 md:space-y-0 md:flex-row md:justify-between">
-          <p className="text-gray-500 text-sm text-center">
+        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-500 text-sm text-center md:text-left">
             © {new Date().getFullYear()} The Lab | All rights reserved
           </p>
-          <div className="flex space-x-6">
-            {footerLinks.map(({ text, href }) => (
-              <a key={text} href={href} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-primary">
-                {text}
-              </a>
-            ))}
-          </div>
+          <p className="text-gray-500 text-sm text-center md:text-right">
+            Website Design by Michael Herring
+          </p>
         </div>
       </div>
     </footer>
