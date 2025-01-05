@@ -61,8 +61,8 @@ export default function ServicesPage() {
         <div className="space-y-8 max-w-5xl mx-auto">
           {[
             {
-              title: "Unlimited Bootcamp Class",
-              description: "Mondays, Wednesdays, Thursday, and Saturday.",
+              title: "Unlimited Bootcamp Classes",
+              description: "Mon, Wed, Thur, and Sat.",
               schedule: ["M", "W", "TH", "S"],
               price: "$250 per month",
               buttonLabel: "Enroll Now",
@@ -70,33 +70,20 @@ export default function ServicesPage() {
             },
             {
               title: "Single Bootcamp Class",
-              description: [
-                "Monday, 7:00pm - 8:00pm",
-                "Wednesday, 7:00pm - 8:00pm",
-                "Thursday, 7:00pm - 8:00pm",
-                "Saturday, 9:00am - 10:00am",
-              ],
+              description: "Mon, Wed, Thur, and Sat.",
               price: "$20 per class",
               buttonLabel: "Enroll Now",
             },
           ].map((bootcamp, index) => (
             <div
               key={index}
-              className="bg-gray-100 p-8 rounded-lg shadow-lg flex justify-between items-center"
+              className="bg-gray-100 p-8 rounded-lg shadow-lg flex flex-col items-center md:flex-row md:justify-between text-center md:text-left"
             >
-              <div>
+              <div className="flex-grow">
                 <h3 className="text-xl font-bold">{bootcamp.title}</h3>
-                {Array.isArray(bootcamp.description) ? (
-                  bootcamp.description.map((desc, idx) => (
-                    <p key={idx} className="text-gray-600">
-                      {desc}
-                    </p>
-                  ))
-                ) : (
-                  <p className="text-gray-600">{bootcamp.description}</p>
-                )}
+                <p className="text-gray-600">{bootcamp.description}</p>
               </div>
-              <div className="text-right">
+              <div className="mt-4 md:mt-0 md:ml-4 text-center">
                 {bootcamp.schedule && (
                   <div className="flex gap-2 mb-4 justify-center">
                     {bootcamp.schedule.map((day) => (
@@ -114,7 +101,7 @@ export default function ServicesPage() {
                   href={bootcamp.url || "#"}
                   target={bootcamp.url ? "_blank" : "_self"}
                   rel="noopener noreferrer"
-                  className="bg-yellow-400 text-black rounded-lg px-4 py-2 mt-4 font-bold hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 inline-block"
+                  className="bg-yellow-400 text-black rounded-lg px-4 py-2 mt-2 font-bold hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 inline-block"
                 >
                   {bootcamp.buttonLabel}
                 </a>
