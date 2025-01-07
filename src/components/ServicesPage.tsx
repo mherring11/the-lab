@@ -64,7 +64,7 @@ export default function ServicesPage() {
               title: "Unlimited Bootcamp Classes",
               description: "Mon, Wed, Thur, and Sat.",
               schedule: ["M", "W", "TH", "S"],
-              price: "$250 per month",
+              price: "$175 per month",
               buttonLabel: "Enroll Now",
               url: "https://pay.thelab210.com/bootcamp-membership", // Link for Unlimited Bootcamp Class
             },
