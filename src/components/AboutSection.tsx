@@ -1,4 +1,5 @@
 import React from "react";
+import CoachMikeImage from "../assets/coach-mike.jpg";
 
 export default function AboutSection() {
   return (
@@ -39,9 +40,10 @@ export default function AboutSection() {
         {/* Right Column: Image */}
         <div className="relative h-96 w-full">
           <img
-            src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0647?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
-            alt="Personal Training & Bootcamp"
+            src={CoachMikeImage}
+            alt="Coach Mike Personal Training & Bootcamp"
             className="w-full h-full object-cover rounded-lg shadow-md"
+            style={{ objectPosition: "center top" }} // Crops the image by focusing on the top
           />
         </div>
       </div>
