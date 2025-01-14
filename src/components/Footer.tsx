@@ -84,15 +84,13 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Links */}
-        <div className="border-t border-gray-200 pt-8 flex flex-col items-center md:flex-row justify-between">
-          <p className="text-gray-500 text-sm text-center md:text-left mb-4 md:mb-0">
+                {/* Bottom Links */}
+                <div className="border-t border-gray-200 pt-8 flex flex-col items-center">
+          <p className="text-gray-500 text-sm text-center">
             © {new Date().getFullYear()} The Lab | All rights reserved
           </p>
-          <p className="text-gray-500 text-sm text-center md:text-right">
-            Website Design by Michael Herring
-          </p>
         </div>
+
       </div>
     </footer>
   );
