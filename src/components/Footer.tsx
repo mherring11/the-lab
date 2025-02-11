@@ -8,7 +8,6 @@ const services = [
 ];
 
 const exploreLinks = [
-  { text: 'Blog', href: 'https://blog.thelab210.com' },
   { text: 'Terms of Service', href: 'https://www.freeprivacypolicy.com/live/59252fa8-f324-47b8-815b-64be2fac048f' },
   { text: 'Privacy Policy', href: 'https://www.freeprivacypolicy.com/live/1955fcf3-cd90-442b-bf3f-d52263cb7a10' },
 ];
@@ -84,13 +83,12 @@ export default function Footer() {
           </div>
         </div>
 
-                {/* Bottom Links */}
-                <div className="border-t border-gray-200 pt-8 flex flex-col items-center">
+        {/* Bottom Links */}
+        <div className="border-t border-gray-200 pt-8 flex flex-col items-center">
           <p className="text-gray-500 text-sm text-center">
             © {new Date().getFullYear()} The Lab | All rights reserved
           </p>
         </div>
-
       </div>
     </footer>
   );

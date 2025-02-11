@@ -6,7 +6,6 @@ const services = [
     { text: 'Bootcamp', id: 'bootcamp' },
 ];
 const exploreLinks = [
-    { text: 'Blog', href: 'https://blog.thelab210.com' },
     { text: 'Terms of Service', href: 'https://www.freeprivacypolicy.com/live/59252fa8-f324-47b8-815b-64be2fac048f' },
     { text: 'Privacy Policy', href: 'https://www.freeprivacypolicy.com/live/1955fcf3-cd90-442b-bf3f-d52263cb7a10' },
 ];

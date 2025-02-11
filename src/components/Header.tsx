@@ -59,14 +59,6 @@ export default function Header() {
             >
               Services
             </Link>
-            <a
-              href="https://blog.thelab210.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-lg font-semibold text-black hover:text-primary transition"
-            >
-              Blog
-            </a>
           </nav>
 
           {/* Right Section with Social Icons and Button */}
@@ -146,14 +138,6 @@ export default function Header() {
             >
               Services
             </Link>
-            <a
-              href="https://blog.thelab210.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-lg font-semibold text-black hover:text-primary transition"
-            >
-              Blog
-            </a>
             <button
               onClick={() => scrollToSection("appointment")}
               className="block w-full bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark text-center text-sm"
