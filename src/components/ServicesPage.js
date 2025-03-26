@@ -27,12 +27,12 @@ export default function ServicesPage() {
                                 url: "https://pay.thelab210.com/bootcamp-membership", // Link for Unlimited Bootcamp Class
                             },
                             {
-                                title: "Spring Break Bootcamp",
-                                description: "Mon, Tue, Wed, and Thur.",
-                                schedule: ["M", "T", "W", "TH"],
-                                price: "$50 total",
+                                title: "Speed & Agility Camp",
+                                description: "Tue and Thur.",
+                                schedule: ["T", "TH"],
+                                price: "$250 total",
                                 buttonLabel: "Enroll Now",
-                                url: "https://pay.thelab210.com/springbreak",
+                                url: "https://pay.thelab210.com/summer-camp",
                             },
                         ].map((bootcamp, index) => (_jsxs("div", { className: "bg-gray-100 p-8 rounded-lg shadow-lg flex flex-col items-center md:flex-row md:justify-between text-center md:text-left", children: [_jsxs("div", { className: "flex-grow", children: [_jsx("h3", { className: "text-xl font-bold", children: bootcamp.title }), _jsx("p", { className: "text-gray-600", children: bootcamp.description })] }), _jsxs("div", { className: "mt-4 md:mt-0 md:ml-4 text-center", children: [bootcamp.schedule && (_jsx("div", { className: "flex gap-2 mb-4 justify-center", children: bootcamp.schedule.map((day) => (_jsx("span", { className: "bg-black text-yellow-400 font-bold rounded-full px-3 py-1", children: day }, day))) })), _jsx("p", { className: "text-lg font-semibold", children: bootcamp.price }), _jsx("a", { href: bootcamp.url || "#", target: bootcamp.url ? "_blank" : "_self", rel: "noopener noreferrer", className: "bg-yellow-400 text-black rounded-lg px-4 py-2 mt-2 font-bold hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 inline-block", children: bootcamp.buttonLabel })] })] }, index))) })] })] }));
 }

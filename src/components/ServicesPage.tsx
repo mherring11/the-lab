@@ -69,12 +69,12 @@ export default function ServicesPage() {
               url: "https://pay.thelab210.com/bootcamp-membership", // Link for Unlimited Bootcamp Class
             },
             {
-              title: "Spring Break Bootcamp",
-              description: "Mon, Tue, Wed, and Thur.",
-              schedule: ["M", "T", "W", "TH"],
-              price: "$50 total",
+              title: "Speed & Agility Camp",
+              description: "Tue and Thur.",
+              schedule: ["T", "TH"],
+              price: "$250 total",
               buttonLabel: "Enroll Now",
-              url: "https://pay.thelab210.com/springbreak",
+              url: "https://pay.thelab210.com/summer-camp",
             },
           ].map((bootcamp, index) => (
             <div
