@@ -1,13 +1,9 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import Header from './components/Header';
-import Hero from './components/Hero';
-import TheLabExperience from './components/TheLabExperience';
-import ServicesPage from './components/ServicesPage';
-import CTASection from './components/CTASection';
-import AboutSection from './components/AboutSection';
-import StepSystem from './components/StepSystem';
-import AppointmentForm from './components/AppointmentForm';
-import Footer from './components/Footer';
+import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
+import { Routes, Route } from 'react-router-dom';
+import ScrollToTop from './ScrollToTop';
+// Import your page components
+import Home from './pages/Home';
+import CampPage from './pages/CampPage';
 export default function App() {
-    return (_jsxs("div", { className: "min-h-screen", children: [_jsx(Header, {}), _jsxs("main", { children: [_jsx(Hero, {}), _jsx(TheLabExperience, {}), _jsx(CTASection, {}), _jsx(AboutSection, {}), _jsx(StepSystem, {}), _jsx(ServicesPage, {}), _jsx(AppointmentForm, {})] }), _jsx(Footer, {})] }));
+    return (_jsxs(_Fragment, { children: [_jsx(ScrollToTop, {}), _jsxs(Routes, { children: [_jsx(Route, { path: "/", element: _jsx(Home, {}) }), _jsx(Route, { path: "/camp", element: _jsx(CampPage, {}) })] })] }));
 }

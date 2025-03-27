@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import Logo from './Logo';
 import { Phone, Mail } from 'lucide-react';
 
@@ -18,6 +19,19 @@ const contactInfo = [
 ];
 
 export default function Footer() {
+  const { pathname } = useLocation();
+
+  const handleFooterLogoClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    // If we're on the home page, prevent the default link behavior and scroll to top
+    if (pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    // Otherwise, let it navigate to "/" normally
+  };
+
   return (
     <footer className="bg-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,9 +39,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left mb-12">
           {/* Logo and Description */}
           <div className="flex flex-col items-center md:items-start">
-            <a href="#top" aria-label="Go to homepage" className="mb-4">
+            <Link to="/" onClick={handleFooterLogoClick} aria-label="Go to homepage" className="mb-4">
               <Logo />
-            </a>
+            </Link>
             <p className="text-gray-600">Built in The Lab, Validated by Effort</p>
           </div>
 

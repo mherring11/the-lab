@@ -1,21 +1,48 @@
 import React, { useState } from "react";
-import { Menu, X, Facebook, Instagram } from "lucide-react"; // Import the icons
-import { Link } from "react-router-dom";
+import { Menu, X, Facebook, Instagram } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { pathname } = useLocation();
 
-  const scrollToSection = (sectionId: string) => {
-    if (sectionId === "home") {
+  // For Home, if we're on the home page, scroll to top using window.scrollTo
+  const handleHomeClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    if (pathname === "/") {
+      e.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
     }
-    setIsMobileMenuOpen(false); // Close menu after clicking a link
+  };
+
+  // For About and Services, if on home page, scroll to the corresponding section.
+  // Otherwise, let the link navigate to "/#about" or "/#services" (Home's useEffect will handle scrolling).
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleAboutClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      scrollToSection("about");
+    }
+  };
+
+  const handleServicesClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      scrollToSection("services");
+    }
   };
 
   return (
@@ -24,46 +51,44 @@ export default function Header() {
         <div className="flex items-center justify-center h-24">
           {/* Logo */}
           <div className="absolute left-4 flex-shrink-0">
-            <Logo />
+            <Link to="/" onClick={handleHomeClick}>
+              <Logo />
+            </Link>
           </div>
 
-          {/* Centered Navigation */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             <Link
               to="/"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("home");
-              }}
+              onClick={handleHomeClick}
               className="text-lg font-semibold text-black hover:text-primary transition"
             >
               Home
             </Link>
             <Link
               to="/#about"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("about");
-              }}
+              onClick={handleAboutClick}
               className="text-lg font-semibold text-black hover:text-primary transition"
             >
               About
             </Link>
             <Link
               to="/#services"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("services");
-              }}
+              onClick={handleServicesClick}
               className="text-lg font-semibold text-black hover:text-primary transition"
             >
               Services
             </Link>
+            <Link
+              to="/camp"
+              className="text-lg font-semibold text-black hover:text-primary transition"
+            >
+              Camp
+            </Link>
           </nav>
 
-          {/* Right Section with Social Icons and Button */}
+          {/* Right Section with Social Icons and Button (Desktop) */}
           <div className="absolute right-4 flex items-center space-x-4">
-            {/* Social Icons with Hover Effect (Hidden on Mobile) */}
             <div className="hidden md:flex space-x-4">
               <a
                 href="https://www.facebook.com/profile.php?id=61571518048845"
@@ -84,8 +109,6 @@ export default function Header() {
                 <Instagram className="h-6 w-6 text-black transition" />
               </a>
             </div>
-
-            {/* Begin Your Journey Button */}
             <button
               onClick={() => scrollToSection("appointment")}
               className="hidden md:block bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark text-sm"
@@ -111,8 +134,12 @@ export default function Header() {
             <Link
               to="/"
               onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("home");
+                if (pathname === "/") {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                } else {
+                  setIsMobileMenuOpen(false);
+                }
               }}
               className="block text-lg font-semibold text-black hover:text-primary transition"
             >
@@ -121,8 +148,10 @@ export default function Header() {
             <Link
               to="/#about"
               onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("about");
+                if (pathname === "/") {
+                  e.preventDefault();
+                  scrollToSection("about");
+                }
               }}
               className="block text-lg font-semibold text-black hover:text-primary transition"
             >
@@ -131,12 +160,21 @@ export default function Header() {
             <Link
               to="/#services"
               onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("services");
+                if (pathname === "/") {
+                  e.preventDefault();
+                  scrollToSection("services");
+                }
               }}
               className="block text-lg font-semibold text-black hover:text-primary transition"
             >
               Services
+            </Link>
+            <Link
+              to="/camp"
+              className="block text-lg font-semibold text-black hover:text-primary transition"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Camp
             </Link>
             <button
               onClick={() => scrollToSection("appointment")}
