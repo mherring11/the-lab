@@ -40,7 +40,7 @@ export default function CampPage() {
             6-Week Program &middot; Two Days a Week
           </p>
           <a
-            href="#details"
+            href="https://pay.thelab210.com/summer-camp"
             className="inline-block bg-yellow-400 text-black px-6 py-3 rounded-full text-lg font-bold hover:bg-yellow-500 transition"
           >
             Register Your Child Now
