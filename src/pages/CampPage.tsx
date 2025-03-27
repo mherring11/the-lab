@@ -43,7 +43,7 @@ export default function CampPage() {
             href="#details"
             className="inline-block bg-yellow-400 text-black px-6 py-3 rounded-full text-lg font-bold hover:bg-yellow-500 transition"
           >
-            Learn More
+            Register Your Child Now
           </a>
         </div>
       </section>
@@ -64,55 +64,59 @@ export default function CampPage() {
 
         {/* Camp Details */}
         <section
-          id="details"
-          className="max-w-5xl mx-auto px-4 py-10 bg-gray-50 rounded-lg shadow-md mb-16"
+  id="details"
+  className="max-w-5xl mx-auto px-4 py-10 bg-gray-50 rounded-lg shadow-md mb-16"
+>
+  <h2 className="text-3xl font-bold text-center mb-8">Camp Details</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    {/* Left Column */}
+    <div className="flex flex-col justify-center space-y-4 text-gray-700 text-lg">
+      <ul className="space-y-4">
+        <li>
+          <strong>Cost:</strong> $50/week or $250 for the full program
+        </li>
+        <li>
+          <strong>Location:</strong> Bulverde Park
+        </li>
+        <li>
+          <strong>Dates:</strong> June 3 - July 17
+        </li>
+        <li>
+          <strong>Days:</strong> Tues &amp; Thurs
+        </li>
+        <li>
+          <strong>Age Groups &amp; Times:</strong>
+          <ul className="list-disc list-inside ml-6">
+            <li>6-10 yrs: 5-6 PM or 6-7PM</li>
+            <li>11-15 yrs: 7-8 PM</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Spots:</strong> Limited to 20 participants per session
+        </li>
+      </ul>
+      {/* Registration Button directly under Age Groups & Times */}
+      <div className="mt-4">
+        <a
+          href="https://pay.thelab210.com/summer-camp"
+          className="inline-block bg-yellow-400 text-black px-4 py-2 rounded-full text-sm font-bold hover:bg-yellow-500 transition"
         >
-          <h2 className="text-3xl font-bold text-center mb-8">Camp Details</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            {/* Left Column */}
-            <div className="flex flex-col justify-center space-y-4 text-gray-700 text-lg">
-              <ul className="space-y-4">
-                <li>
-                  <strong>Dates:</strong> June 3 - July 17
-                </li>
-                <li>
-                  <strong>Cost:</strong> $50/week or $250 for the full program
-                </li>
-                <li>
-                  <strong>Frequency:</strong> Two days a week
-                </li>
-                <li>
-                  <strong>Spots:</strong> Limited to 20 participants per session
-                </li>
-                <li>
-                  <strong>Age Groups &amp; Times:</strong>
-                  <ul className="list-disc list-inside ml-6">
-                    <li>6-10 yrs: 5-6 PM</li>
-                    <li>11-15 yrs: 6-7 PM or 7-8 PM</li>
-                  </ul>
-                  {/* Registration button directly under the age groups */}
-                  <div className="mt-4">
-                    <a
-                      href="https://pay.thelab210.com/summer-camp"
-                      className="inline-block bg-yellow-400 text-black px-4 py-2 rounded-full text-sm font-bold hover:bg-yellow-500 transition"
-                    >
-                      Register Your Child Now
-                    </a>
-                  </div>
-                </li>
-              </ul>
-            </div>
+          Register Your Child Now
+        </a>
+      </div>
+    </div>
 
-            {/* Right Column: Flyer */}
-            <div className="flex items-center justify-center">
-              <img
-                src={flyer}
-                alt="Speed & Agility Camp Flyer"
-                className="w-full h-auto rounded-md shadow"
-              />
-            </div>
-          </div>
-        </section>
+    {/* Right Column: Flyer */}
+    <div className="flex items-center justify-center">
+      <img
+        src={flyer} // or your actual flyer import
+        alt="Speed & Agility Camp Flyer"
+        className="w-full h-auto rounded-md shadow"
+      />
+    </div>
+  </div>
+</section>
+
 
         {/* What Your Child Will Gain */}
         <section className="max-w-5xl mx-auto px-4 py-10 mb-16">
