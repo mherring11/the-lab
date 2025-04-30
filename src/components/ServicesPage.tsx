@@ -71,7 +71,7 @@ export default function ServicesPage() {
             {
               title: "Speed & Agility Camp",
               description: "Tue and Thur.",
-              schedule: ["T", "TH"],
+              schedule: ["Tue", "Thur"],
               price: "$250 total",
               buttonLabel: "Enroll Now",
               url: "https://pay.thelab210.com/summer-camp",
