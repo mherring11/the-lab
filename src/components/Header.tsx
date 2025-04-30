@@ -110,7 +110,12 @@ export default function Header() {
               </a>
             </div>
             <button
-              onClick={() => scrollToSection("appointment")}
+            onClick={() => {
+              const appointmentSection = document.getElementById("appointment");
+              if (appointmentSection) {
+                appointmentSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
               className="hidden md:block bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark text-sm"
             >
               Begin Your Journey
