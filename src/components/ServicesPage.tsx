@@ -63,7 +63,7 @@ export default function ServicesPage() {
             {
               title: "Speed & Agility Camp Weekly",
               description: "Tue and Thur.",
-              schedule: ["T", "Thur"],
+              schedule: ["Tue", "Thur"],
               price: "$50 Per Week",
               buttonLabel: "Enroll Now",
               url: "https://pay.thelab210.com/weekly", // Link for Unlimited Bootcamp Class

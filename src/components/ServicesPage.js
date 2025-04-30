@@ -19,12 +19,12 @@ export default function ServicesPage() {
                             },
                         ].map((item) => (_jsxs("div", { className: "bg-gray-100 shadow-lg rounded-lg p-6", children: [_jsx("h3", { className: "text-xl font-semibold mb-2", children: item.title }), _jsx("p", { className: "text-2xl font-bold text-yellow-500", children: item.price }), _jsx("p", { className: "text-gray-600", children: item.description })] }, item.title))) })] }), _jsxs("section", { id: "bootcamp", className: "py-16 bg-white text-center scroll-mt-24", children: [_jsx("h2", { className: "text-3xl font-bold mb-6", children: "BOOTCAMP CLASSES" }), _jsx("div", { className: "space-y-8 max-w-5xl mx-auto", children: [
                             {
-                                title: "Unlimited Bootcamp Classes",
-                                description: "Mon, Wed, Thur, and Sat.",
-                                schedule: ["M", "W", "TH", "S"],
-                                price: "$175 per month",
+                                title: "Speed & Agility Camp Weekly",
+                                description: "Tue and Thur.",
+                                schedule: ["T", "Thur"],
+                                price: "$50 Per Week",
                                 buttonLabel: "Enroll Now",
-                                url: "https://pay.thelab210.com/bootcamp-membership", // Link for Unlimited Bootcamp Class
+                                url: "https://pay.thelab210.com/weekly", // Link for Unlimited Bootcamp Class
                             },
                             {
                                 title: "Speed & Agility Camp",
