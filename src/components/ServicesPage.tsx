@@ -61,15 +61,15 @@ export default function ServicesPage() {
         <div className="space-y-8 max-w-5xl mx-auto">
           {[
             {
-              title: "Unlimited Bootcamp Classes",
-              description: "Mon, Wed, Thur, and Sat.",
-              schedule: ["M", "W", "TH", "S"],
-              price: "$175 per month",
+              title: "Speed & Agility Camp Weekly",
+              description: "Tue and Thur.",
+              schedule: ["T", "TH"],
+              price: "$50 Per Week",
               buttonLabel: "Enroll Now",
-              url: "https://pay.thelab210.com/bootcamp-membership", // Link for Unlimited Bootcamp Class
+              url: "hhttps://pay.thelab210.com/weekly", 
             },
             {
-              title: "Speed & Agility Camp",
+              title: "Speed & Agility Camp Monthly",
               description: "Tue and Thur.",
               schedule: ["T", "TH"],
               price: "$250 total",
